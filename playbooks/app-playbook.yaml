@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Update apt cache and install curl, wget, unzip, rsync, git, vim, tmux and tree
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - curl
+        - wget
+        - unzip
+        - rsync
+        - git
+        - vim
+        - tmux
+        - tree

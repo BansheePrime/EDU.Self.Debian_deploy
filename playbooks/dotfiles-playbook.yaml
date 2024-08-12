@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  tasks:
+    - name: copy .tmux.conf from ./dotfiles directory
+      ansible.builtin.copy:
+        src: ./dotfiles/.tmux.conf
+        dest: /home/gidra
+        owner: gidra
+        group: gidra
+        mode: '0644'
+
+    - name: copy .vimrc from ./dotfiles directory
+      ansible.builtin.copy:
+        src: ./dotfiles/.vimrc
+        dest: /home/gidra
+        owner: gidra
+        group: gidra
+        mode: '0644'
