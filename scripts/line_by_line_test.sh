@@ -6,8 +6,8 @@ trap "set +x ; sleep 1h ; set -x" DEBUG
 
 # YOUR CODE HERE 
 # To stop the script you would have to kill it from another shell 
-sudo apt update 
-sudo apt upgrade
+# sudo apt update 
+# sudo apt upgrade
 mkdir -p ~/tmp/test
 printf '%s\n' 'first line' 'second line' 'third line' > ~/tmp/test/file.printf
 cat ~/tmp/test/file.printf
