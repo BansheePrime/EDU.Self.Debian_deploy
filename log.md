@@ -2,6 +2,8 @@
 
 ## TODO
 
+- rename playbook app to userapp
+
 ### NB
 
 usermod in /usr/sbin
@@ -15,6 +17,8 @@ usermod in /usr/sbin
 <https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html>
 
 #### Ansible on Debian 12 from Ubuntu repository
+
+##### NB gpg may be gnupg
 
 ```bash
 UBUNTU_CODENAME=jammy
