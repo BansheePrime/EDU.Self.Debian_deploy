@@ -74,3 +74,9 @@ sudo ls -lAh /var/lib/libvirt/images
 To provision a KVM VM using Ansible, use the community.libvirt.virt module. This module requires a VM definition in XML format according to the syntax of libvirt. The most convenient way to get this file is to dump an existing VM definition using the command `virsh dumpxml`.
 
 - see file *./kvmlab/roles/kvm_provision/templates/vm-template.xml.j2*
+
+### Create directories structure with bash
+
+```bash
+eval "mkdir -p foundryvtt_deploy/{playbooks/dotfiles/,scripts,inventories}"
+```

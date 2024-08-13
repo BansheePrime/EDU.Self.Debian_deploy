@@ -6,3 +6,7 @@ target:
   hosts: 
     192.168.1.80 # shugar
     # 192.168.1.?? # kvm
+  
+  # vars:
+  #   ansible_user: {{ username }}
+  #   ansible_ssh_private_key_file: {{ ssh private key }}
