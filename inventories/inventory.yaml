@@ -4,5 +4,5 @@ source:
 
 target:
   hosts: 
-    192.168.1.82 # kaizer
+    192.168.1.80 # shugar
     # 192.168.1.?? # kvm

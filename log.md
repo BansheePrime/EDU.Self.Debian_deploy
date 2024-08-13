@@ -33,6 +33,14 @@ sudo apt update && sudo apt install ansible
 
 <https://ipv6.rs/tutorial/MXLinux_Latest/KVM/>
 
+### How to Install KVM on Ubuntu
+
+<https://phoenixnap.com/kb/ubuntu-install-kvm>
+
+### How to use bridged networking with libvirt and KVM
+
+<https://linuxconfig.org/how-to-use-bridged-networking-with-libvirt-and-kvm>
+
 ## THE LOG
 
 ```bash
