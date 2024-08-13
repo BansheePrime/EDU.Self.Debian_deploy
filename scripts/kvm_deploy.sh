@@ -24,4 +24,4 @@ sudo ip link set eth1 master br0 # kaizer net
 #
 sudo apt install gir1.2-spiceclientgtk-3.0
 #
-sudo virt-manager
+sudo virt-manager # if $USER absent in libvirt and kvm groups

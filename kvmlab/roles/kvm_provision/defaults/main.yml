@@ -1,0 +1,13 @@
+---
+# defaults file for kvm_provision
+base_image_name: debian-12-genericcloud-amd64-20240717-1811.qcow2
+base_image_url: https://cloud.debian.org/images/cloud/bookworm/20240717-1811/debian-12-genericcloud-amd64-20240717-1811.qcow2
+base_image_sha: 0f0075d53749dba4c9825e606899360626bb20ac6bab3dbdeff40041b051d203eb1a56e68d377c9fac0187faa0aea77fd543ef4a883fff2304eac252cce01b44
+libvirt_pool_dir: "/var/lib/libvirt/images"
+vm_name: debi12
+vm_vcpus: 2
+vm_ram_mb: 2048
+vm_net: default
+vm_root_pass: root
+cleanup_tmp: no
+ssh_key: /root/.ssh/id_ed25519.pub
