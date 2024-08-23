@@ -80,3 +80,21 @@ To provision a KVM VM using Ansible, use the community.libvirt.virt module. This
 ```bash
 eval "mkdir -p foundryvtt_deploy/{playbooks/dotfiles/,scripts,inventories}"
 ```
+
+### Upgrade all pip packages NB: check you are in right virtual env
+
+```bash
+pip freeze > requirements.txt
+pip install -r requirements.txt --upgrade
+
+```
+
+### Ansible role NGINX
+
+<https://github.com/nginxinc/ansible-role-nginx>
+
+### Molecule
+
+**Molecule is used to test the various functionalities of the role.**
+<https://ansible.readthedocs.io/projects/molecule/getting-started/>
+

@@ -21,11 +21,11 @@ cd foundryvtt
 wget -O foundryvtt.zip "<foundry-website-download-url>"
 unzip foundryvtt.zip
 
-# Start running the server
-node resources/app/main.js --dataPath=$HOME/foundrydata
+# IGNORE
+#node resources/app/main.js --dataPath=$HOME/foundrydata
 
 # pm2 /* LATER */
 sudo npm install -g pm2
-pm2 start $HOME/foundryvtt_server/foundryvtt/resources/app/main.js -- --port=30000 --dataPath=/$HOME/foundryvtt_server/foundrydata
+pm2 start $HOME/foundryvtt/resources/app/main.js -- --port=30000 --dataPath=/$HOME/foundrydata
 pm2 save
 pm2 startup systemd
