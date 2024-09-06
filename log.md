@@ -98,3 +98,10 @@ pip install -r requirements.txt --upgrade
 **Molecule is used to test the various functionalities of the role.**
 <https://ansible.readthedocs.io/projects/molecule/getting-started/>
 
+### updating pip apps
+
+```bash
+pip list --outdated
+pip install setuptools --upgrade
+pip install pip --upgrade
+```
