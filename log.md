@@ -111,3 +111,11 @@ pip install pip --upgrade
 - A script to generate a debian 9 iso with a preseed.cfg
 <https://www.reddit.com/r/debian/comments/847l9d/a_script_to_generate_a_debian_9_iso_with_a/>
 
+```bash
+perl -e 'use Crypt::PasswdMD5;print("userPassword: {CRYPT}".unix_md5_crypt("password","salt")."\n");'
+```
+
+```bash
+sudo apt install whois
+makepasswd
+```
