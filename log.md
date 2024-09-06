@@ -119,3 +119,27 @@ perl -e 'use Crypt::PasswdMD5;print("userPassword: {CRYPT}".unix_md5_crypt("pass
 sudo apt install whois
 makepasswd
 ```
+- Set of scripts to remaster Debian iso images.
+<https://github.com/unixabg/remaster-iso>
+
+<https://superuser.com/questions/379761/install-linux-alternative-os-on-headless-server>
+
+```bash
+wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.7.0-amd64-netinst.iso
+```
+Mounting an ISO file requires mapping its data to a loop device. Attach an ISO file to a mount point using a loop device by passing the -o loop option:
+```bash
+sudo mount -o loop -t iso9660 ./debian-12.7.0-amd64-netinst.iso ./debi
+```
+```bash
+mkdir ./preseededISO
+rsync -a -H –exclude=TRANS.TBL ./debi ./preseededISO
+# // -a, --archive               archive mode; equals -rlptgoD (no -H,-A,-X)
+# // -H, --hard-links            preserve hard links
+# // TRANS.TBL - an extension to ISO9660 for better compability with older systems
+```
+*Edit files*
+*Update md5sum.txt*
+```bash
+md5sum
+```
