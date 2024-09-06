@@ -105,3 +105,9 @@ pip list --outdated
 pip install setuptools --upgrade
 pip install pip --upgrade
 ```
+
+### Usefull reading 
+
+- A script to generate a debian 9 iso with a preseed.cfg
+<https://www.reddit.com/r/debian/comments/847l9d/a_script_to_generate_a_debian_9_iso_with_a/>
+
