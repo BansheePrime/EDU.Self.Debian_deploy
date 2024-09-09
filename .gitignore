@@ -4,6 +4,7 @@ secret_key
 preseeded/example-preseed.txt
 preseeded/seed_prep_live_system.txt
 .venv/
+kvmlab/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
