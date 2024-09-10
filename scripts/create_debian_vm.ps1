@@ -23,7 +23,7 @@ Disable-VMIntegrationService -VMName $VMName -Name "Обмен парами `"к
 # # Подготовка к отключению VMIntegrationService
 # Get-VMIntegrationService -VMName $VMName
 # Disable-VMIntegrationService -VMName $VMName -Name "Guest Service Interface"
-# Disable-VMIntegrationService -VMName $VMName -Name "Heartbeat"
+# Disable-VMIntegrationService -VMName $VMName -Pick Name "Heartbeat"
 # Disable-VMIntegrationService -VMName $VMName -Name "Key-Value Pair Exchange"
 # Disable-VMIntegrationService -VMName $VMName -Name "VSS"
 

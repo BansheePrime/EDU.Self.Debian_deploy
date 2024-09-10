@@ -143,3 +143,11 @@ rsync -a -H –exclude=TRANS.TBL ./debi ./preseededISO
 ```bash
 md5sum
 ```
+
+### Provisioning a Virtual Environment with powershell
+
+Main source:
+Adam Bertram "PowerShell for sysadmins" No Starch Press, 2020.
+Chapter 15: Provisioning a Virtual Environment (p. 217 - 230)
+Mighty script with clear comments.
+
