@@ -78,3 +78,11 @@ Disable-VMIntegrationService -VMName $VMName -Name "VSS"
 ```powershell
 $PSVersionTable
 ```
+
+### Confirm the file doesn’t already exist. Throw a terminating error if it does
+
+```powershell
+if(Test-Path -Path $SourceFile){
+    throw "The file '$SourceFile' already exists"
+}
+```
