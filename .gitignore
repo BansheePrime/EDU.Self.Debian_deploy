@@ -5,6 +5,8 @@ preseeded/example-preseed.txt
 preseeded/seed_prep_live_system.txt
 .venv/
 kvmlab/
+activate
+*.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
