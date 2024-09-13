@@ -43,6 +43,12 @@ Disable-VMIntegrationService -VMName $VMName -Name "Обмен парами `"к
 
 <a id="notes"></a>
 
+### Detailed Information About Hyper-V VMs
+
+Get-VM -Name "AlpinePrimus" | Select-Object *
+Get-VM -Name "AlpinePrimus" | Select-Object -ExpandProperty HardDrives | Select-Object *
+Get-VMHardDiskDrive -VMName "AlpinePrimus" | Select-Object *
+
 ### Название VMIntegrationService по-русски
 
 - Интерфейс гостевой службы

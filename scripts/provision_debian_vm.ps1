@@ -9,7 +9,8 @@ Add-VMDvdDrive -VMName $VMName -ControllerNumber 1 -ControllerLocation 0 -Path $
 # Mount Installation Media
 $DVDDrive = Get-VMDvdDrive -VMName $VMName
 # Configure Virtual Machine to Boot from DVD
-Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive -EnableSecureBoot Off
+Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
+Set-VMFirmware -VMName $VMName -EnableSecureBoot Off
 Set-VMMemory -VMName $VMName -DynamicMemoryEnabled $false
 Set-VM -VMName $VMName -ProcessorCount 2 -CheckpointType Disabled -AutomaticStartAction Nothing -AutomaticStopAction TurnOff -Passthru
 Disable-VMIntegrationService -VMName $VMName -Name "Интерфейс гостевой службы"

@@ -57,5 +57,11 @@ By hands or by script
 [] change boot order to .vhdx
 
 ```powershell
-...
+$VMName = 'AlpinePrimus'
+$BootDevice = 'C:\Virtual Hard Disks\AlpinePrimus.vhdx'
+Set-VMFirmware -VMName $VMName -FirstBootDevice $BootDevice
+Get-VMDvdDrive -VMName $VMName | Set-VMDvdDrive -Path $null
 ```
+
+[-FirstBootDevice `<VMComponentObject`>]
+Should I write it as VMHardDiskDrive or as path to .vhdx ?

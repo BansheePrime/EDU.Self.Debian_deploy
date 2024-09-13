@@ -6,7 +6,8 @@ New-VM -Name $VMName -MemoryStartupBytes 1GB -NewVHDPath "C:\Virtual Hard Disks\
 Add-VMScsiController -VMName $VMName
 Add-VMDvdDrive -VMName $VMName -ControllerNumber 1 -ControllerLocation 0 -Path $InstallationMedia
 $DVDDrive = Get-VMDvdDrive -VMName $VMName
-Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive -EnableSecureBoot Off
+Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
+Set-VMFirmware -VMName $VMName -EnableSecureBoot Off
 Set-VMMemory -VMName $VMName -DynamicMemoryEnabled $false
 Set-VM -VMName $VMName -ProcessorCount 1 -CheckpointType Disabled -AutomaticStartAction Nothing -AutomaticStopAction TurnOff -Passthru
 Disable-VMIntegrationService -VMName $VMName -Name "Интерфейс гостевой службы"
