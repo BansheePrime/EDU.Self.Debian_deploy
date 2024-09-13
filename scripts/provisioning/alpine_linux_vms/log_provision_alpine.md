@@ -76,11 +76,19 @@ By hands or by script
 [] 
 
 **NB** After ejecting .iso *VMDvdDrive* Correct boot device set automatically
+**NB** But boot order - different beast.
 ```powershell
 $VMName = 'AlpinePrimus'
 $BootDevice = 'C:\Virtual Hard Disks\AlpinePrimus.vhdx'
-Set-VMFirmware -VMName $VMName -FirstBootDevice $BootDevice
 Get-VMDvdDrive -VMName $VMName | Set-VMDvdDrive -Path $null
+```
+
+NOT **Working as intended code:**
+
+```powershell
+Get-VMHardDiskDrive -VMName $VMName
+$BootDevice = Get-VMHardDiskDrive -VMName $VMName
+Set-VMFirmware -VMName $VMName -FirstBootDevice $BootDevice
 ```
 
 [-FirstBootDevice `<VMComponentObject`>]
