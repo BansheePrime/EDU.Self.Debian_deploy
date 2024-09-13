@@ -1,9 +1,9 @@
 #requires -RunAsAdministrator
 # Set-ExecutionPolicy AllSigned
-# provision_alpine_vm1.ps1 -ExecutionPolicy Bypass
-$VMName = 'AlpinePrimus'
+# provision_alpine_vm2.ps1 -ExecutionPolicy Bypass
+$VMName = 'AlpineSecundus'
 $InstallationMedia = 'D:\iso\alpine-virt-3.20.3-x86_64.iso'
-New-VM -Name $VMName -MemoryStartupBytes 1GB -NewVHDPath "C:\Virtual Hard Disks\AlpinePrimus.vhdx" -NewVHDSizeBytes 2GB -Path "C:\Virtual Hard Disks\$VMName" -Generation 2 -Switch External
+New-VM -Name $VMName -MemoryStartupBytes 1GB -NewVHDPath "C:\Virtual Hard Disks\AlpineSecundus.vhdx" -NewVHDSizeBytes 2GB -Path "C:\Virtual Hard Disks\$VMName" -Generation 2 -Switch External
 Add-VMScsiController -VMName $VMName
 Add-VMDvdDrive -VMName $VMName -ControllerNumber 1 -ControllerLocation 0 -Path $InstallationMedia
 $DVDDrive = Get-VMDvdDrive -VMName $VMName

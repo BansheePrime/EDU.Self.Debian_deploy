@@ -2,6 +2,10 @@
 
 <https://docs.alpinelinux.org/user-handbook/0.1a/Installing/setup_alpine.html>
 <https://github.com/alpinelinux/alpine-conf/blob/master/setup-alpine.in>
+<https://stackoverflow.com/questions/53034988/powershell-script-ssh-into-server>
+
+Good list of Post-Installation steps
+<https://wiki.alpinelinux.org/wiki/Installation#Installation_Overview>
 
 ## alpine wonders
 
@@ -20,13 +24,13 @@ setup-interfaces -a
 2. Repositories
 
 ```bash
-setup-apkrepos
+setup-apkrepos -1
 ```
 
 3. Install openssh
 
 ```bash
-apk add name
+apk add openssh
 ```
 
 -- Optional^ start service and add enable it
@@ -40,11 +44,24 @@ rc-update add openssh
 
 ```bash
 scp ./preseed_alpine.cfg ALPINE_VM:
+scp ./set_alpine_vm.sh ALPINE_VM:
 ```
 
 ### **BEFORE** poweroff
 
-1. setup-alpine -f ANSWER_FILE
+1. setup-alpine -f preseed_alpine.cfg
+2. launch set_alpine_vm.sh
+    - *ignore* create user
+    - *ignore* add user to wheel
+    - *ignore* install doas
+        *ignore* ```sh permit :wheel``` // Looks like it is default state
+    - *ignore* copy ssh keys for new user
+3. log ip in ansible inventory
+4. ansible ping
+
+```bash
+ansible primus -i ./inventories/inventory.yaml -m ping
+```
 
 ```bash
 poweroff
@@ -53,9 +70,12 @@ poweroff
 ### **POST** poweroff
 
 By hands or by script
-[] unmount .iso
+[*] unmount .iso
 [] change boot order to .vhdx
+[] log new alpine vm in ansible inventory
+[] 
 
+**NB** After ejecting .iso *VMDvdDrive* Correct boot device set automatically
 ```powershell
 $VMName = 'AlpinePrimus'
 $BootDevice = 'C:\Virtual Hard Disks\AlpinePrimus.vhdx'
@@ -70,7 +90,7 @@ Should I write it as VMHardDiskDrive or as path to .vhdx ?
 
 <https://docs.alpinelinux.org/user-handbook/0.1a/Working/post-install.html>
 
-#### Creating a Normal User
+#### Creating a sudo User
 
 ```bash
 apk add doas
