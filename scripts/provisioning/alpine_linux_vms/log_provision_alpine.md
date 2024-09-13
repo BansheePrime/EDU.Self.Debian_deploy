@@ -65,3 +65,22 @@ Get-VMDvdDrive -VMName $VMName | Set-VMDvdDrive -Path $null
 
 [-FirstBootDevice `<VMComponentObject`>]
 Should I write it as VMHardDiskDrive or as path to .vhdx ?
+
+### Post Installation Recommendations
+
+<https://docs.alpinelinux.org/user-handbook/0.1a/Working/post-install.html>
+
+#### Creating a Normal User
+
+```bash
+apk add doas
+echo 'permit :wheel' > /etc/doas.d/doas.conf
+adduser joe -G wheel
+su -l joe
+```
+
+Quoting:
+
+- doas is not installed by default.
+- by default, doas only provides permissions to root. This translates as "people in the group wheel are allowed to perform any command, as any user, and any group."
+- The wheel group mentioned above is the common "administrator" group, and since we’re using it, we need to add our user to said group.

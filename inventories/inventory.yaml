@@ -2,12 +2,14 @@
 
 target:
   hosts:
-    master:
-      ansible_host: 192.168.1.78
-    shugar:
-      ansible_host: 192.168.1.80
-    glucose:
-      ansible_host: 192.168.1.83
+    primus:
+      ansible_host: 192.168.1.95
+    secundus:
+      ansible_host: 192.168.1.96
+    tertius:
+      ansible_host: 192.168.1.97
+    quartus:
+      ansible_host: 192.168.1.98
   
   # vars:
   #   ansible_user: {{ username }}
