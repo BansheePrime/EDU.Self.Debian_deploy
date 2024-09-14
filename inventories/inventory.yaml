@@ -1,6 +1,6 @@
 ---
 
-target:
+alpines:
   hosts:
     primus:
       ansible_host: 192.168.1.95
@@ -10,9 +10,20 @@ target:
       ansible_host: 192.168.1.98
     quartus:
       ansible_host: 192.168.1.99
+  vars:
+    ansible_user: gidra
+    ansible_ssh_private_key_file: ~/.ssh/master_key
+
+win:
+  hosts:
     win10:
       ansible_host: 192.168.1.81
-  
+
+mxlinux:
+  hosts:
+    yachiru:
+      ansible_host: 192.168.1.74
+
   # vars:
   #   ansible_user: {{ username }}
   #   ansible_ssh_private_key_file: {{ ssh private key }}
