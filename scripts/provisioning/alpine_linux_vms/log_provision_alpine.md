@@ -7,6 +7,16 @@
 Good list of Post-Installation steps
 <https://wiki.alpinelinux.org/wiki/Installation#Installation_Overview>
 
+## Eureka
+
+**ERROR:**
+Mount .vhdx as SCSI device and after reboot this way you get proper source of boot info.
+
+TODO
+[] rewrite powershell provisioning script with ForEach (line by line execution)
+[] proper error handing
+[] one script to serve them all
+
 ## alpine wonders
 
 Start powershell script with:

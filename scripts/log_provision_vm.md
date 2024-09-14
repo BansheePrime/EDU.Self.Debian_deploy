@@ -1,5 +1,13 @@
 # Provision Debian on Hyper-V
 
+Fascinating reading:
+<https://automatedlab.org/en/latest/Wiki/Basic/gettingstarted/>
+Quoting:
+*"AutomatedLab is a provisioning solution and framework that lets you deploy complex labs on HyperV and Azure with simple PowerShell scripts. "*
+<https://github.com/AutomatedLab/AutomatedLab?tab=readme-ov-file>
+
+
+
 ## Table of Contents
 
 1. [The Script](#the-script)
