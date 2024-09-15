@@ -108,4 +108,5 @@ if(Test-Path -Path $SourceFile){
 ```powershell
 Get-Vm | Where-Object { $_.Name -match 'Debian*' } | Start-Vm
 Get-Vm | Where-Object { $_.Name -match 'Alpine*' } | Start-Vm
+Get-Vm | Where { $_.State –eq ‘Running’ } | Stop-Vm 
 ```
