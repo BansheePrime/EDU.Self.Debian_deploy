@@ -100,3 +100,12 @@ if(Test-Path -Path $SourceFile){
     throw "The file '$SourceFile' already exists"
 }
 ```
+
+## Launch selected VMs
+
+**NB** I wish there was tool like vagrant on Win
+
+```powershell
+Get-Vm | Where-Object { $_.Name -match 'Debian*' } | Start-Vm
+Get-Vm | Where-Object { $_.Name -match 'Alpine*' } | Start-Vm
+```
