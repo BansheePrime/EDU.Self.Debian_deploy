@@ -10,6 +10,7 @@ alpines:
       ansible_host: 192.168.1.98
     quartus:
       ansible_host: 192.168.1.99
+
   vars:
     ansible_user: gidra
     ansible_ssh_private_key_file: ~/.ssh/master_key

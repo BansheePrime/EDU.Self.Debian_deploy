@@ -151,3 +151,26 @@ Adam Bertram "PowerShell for sysadmins" No Starch Press, 2020.
 Chapter 15: Provisioning a Virtual Environment (p. 217 - 230)
 Mighty script with clear comments.
 
+### Disable ansible interpreter warning:
+
+```bash
+[WARNING]: Platform linux on host primus is using the discovered Python interpreter
+at /usr/bin/python3, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.14/reference_appendices/interpreter_discovery.html for more information.
+```
+
+1. create ansible.cfg in project directory
+2. in section [defaults] include line:
+	*interpreter_python=auto_silent*
+
+### For managing Alpine Linux cluster install doas support:
+
+```sh
+ansible-galaxy collection install community.general
+```
+
+```sh
+ansible alpines -m shell -a "apk update" -bK --become-method=doas
+```
+
