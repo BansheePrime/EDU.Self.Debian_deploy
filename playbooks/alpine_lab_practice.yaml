@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  gather_facts: false
+  become: true
+  become_method: doas
+  tasks:    
+    - name: apk update
+        community.general.apk:
+          update_cache: true

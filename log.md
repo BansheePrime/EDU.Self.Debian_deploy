@@ -174,3 +174,7 @@ ansible-galaxy collection install community.general
 ansible alpines -m shell -a "apk update" -bK --become-method=doas
 ```
 
+```sh
+ansible alpines -m command -a "poweroff" -bK --become-method=doas
+```
+
