@@ -183,3 +183,7 @@ ansible alpines -m command -a "poweroff" -bK --become-method=doas
 ansible-playbook ./playbooks/sshd_allow_forwarding.yaml -l alpines -bK
 ```
 
+### Vim editor plugins
+
+- **vim-plug** <https://github.com/junegunn/vim-plug>
+- **ansible-vim** <https://github.com/pearofducks/ansible-vim?tab=readme-ov-file>
