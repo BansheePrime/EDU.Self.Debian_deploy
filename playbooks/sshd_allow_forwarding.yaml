@@ -1,0 +1,33 @@
+---
+
+- hosts: all
+  gather_facts: false
+  become: true
+  become_method: doas
+
+  vars:
+    SEARCH_LINE: "AllowTcpForwarding no"
+    INSERT_LINE: "AllowTcpForwarding yes"
+
+  tasks:
+  - name: Comment AllowTcpForwadring line in sshd_config
+    ansible.builtin.lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: '^{{ SEARCH_LINE }}'
+      line: '#{{ SEARCH_LINE }}'
+
+  - name: Add new line allowing TcpForwarding
+    ansible.builtin.lineinfile:
+      path: /etc/ssh/sshd_config
+      line: 'AllowTcpForwarding yes'
+      create: yes
+    notify:
+      - Restart sshd
+
+  handlers:
+  - name: Restart sshd
+    command: /etc/init.d/sshd restart
+
+
+
+

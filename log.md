@@ -178,3 +178,8 @@ ansible alpines -m shell -a "apk update" -bK --become-method=doas
 ansible alpines -m command -a "poweroff" -bK --become-method=doas
 ```
 
+### Testing ssh tunneling
+```sh
+ansible-playbook ./playbooks/sshd_allow_forwarding.yaml -l alpines -bK
+```
+
